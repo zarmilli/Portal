@@ -1,0 +1,770 @@
+/* ================================
+   Variables
+================================ */
+
+:root {
+    --accent: #bef164;
+    --accent-dark: #a9dc55;
+
+    --background: #090a0b;
+    --surface: #111315;
+    --surface-hover: #16191b;
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --text-primary: #f5f5f5;
+    --text-secondary: #92969a;
+    --text-muted: #666b70;
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+}
+
+
+/* ================================
+   Reset
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ================================
+   Workspace
+================================ */
+
+.workspace {
+    width: min(100% - 40px, 1100px);
+    margin: 0 auto;
+    padding: 70px 0 100px;
+}
+
+
+/* ================================
+   Header
+================================ */
+
+.workspace-header {
+    margin-bottom: 35px;
+}
+
+.workspace-header h1 {
+    font-size: clamp(36px, 6vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.workspace-header p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* ================================
+   Projects
+================================ */
+
+.projects {
+    width: 100%;
+}
+
+
+/* ================================
+   Project Card
+================================ */
+
+.project-card {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 30px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.project-card:hover {
+    background: var(--surface-hover);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ================================
+   Project Information
+================================ */
+
+.project-info h2 {
+    font-size: 45px;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+}
+
+.project-info p {
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* ================================
+   Dates
+================================ */
+
+.project-dates {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.date-end {
+    text-align: right;
+}
+
+.date span {
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+}
+
+.date strong {
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* ================================
+   Progress Bar
+================================ */
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-track {
+    width: 100%;
+    height: 7px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: var(--accent);
+    border-radius: inherit;
+
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    box-shadow: 0 0 14px rgba(190, 241, 100, 0.18);
+}
+
+
+/* ================================
+   Progress Details
+================================ */
+
+.progress-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.progress-details span {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.progress-details strong {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ================================
+   Active Project Stage
+================================ */
+
+.active-stage {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 18px;
+
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.stage-dot {
+    width: 7px;
+    height: 7px;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 0 rgba(190, 241, 100, 0.5);
+
+    animation: stagePulse 2s infinite;
+}
+
+@keyframes stagePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(190, 241, 100, 0.45);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(190, 241, 100, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(190, 241, 100, 0);
+    }
+}
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 600px) {
+
+    .workspace {
+        width: min(100% - 28px, 1100px);
+        padding-top: 45px;
+    }
+
+    .workspace-header {
+        margin-bottom: 25px;
+    }
+
+    .workspace-header h1 {
+        font-size: 38px;
+    }
+
+    .project-card {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .project-info h2 {
+        font-size: 32px;
+    }
+
+    .project-dates {
+        margin-top: 40px;
+    }
+
+    .date strong {
+        font-size: 12px;
+    }
+
+}
+
+/* ================================
+   Timeline Section
+================================ */
+
+.timeline-section {
+    margin-top: 70px;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.section-heading p {
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+
+/* ================================
+   Timeline
+================================ */
+
+.timeline {
+    position: relative;
+    width: 100%;
+    padding-left: 34px;
+}
+
+
+/* Vertical line */
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 10px;
+
+    width: 1px;
+
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+/* ================================
+   Timeline Item
+================================ */
+
+.timeline-item {
+    position: relative;
+
+    display: flex;
+    gap: 24px;
+
+    padding-bottom: 42px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+
+/* ================================
+   Timeline Marker
+================================ */
+
+.timeline-marker {
+    position: absolute;
+
+    left: -34px;
+    top: 0;
+
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--background);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    z-index: 2;
+}
+
+
+/* Completed marker */
+
+.timeline-item.completed .timeline-marker {
+    background: var(--accent);
+    border-color: var(--accent);
+
+    color: #090a0b;
+}
+
+.timeline-item.completed .timeline-marker span {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* Active marker */
+
+.timeline-item.active .timeline-marker {
+    border-color: var(--accent);
+    background: var(--background);
+}
+
+
+/* ================================
+   Timeline Content
+================================ */
+
+.timeline-content {
+    max-width: 700px;
+}
+
+.timeline-stage {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.timeline-content h3 {
+    color: var(--text-primary);
+
+    font-size: 17px;
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
+}
+
+.timeline-content p {
+    margin-top: 7px;
+
+    max-width: 600px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   Active Stage
+================================ */
+
+.timeline-item.active .timeline-stage {
+    color: var(--accent);
+}
+
+
+/* ================================
+   Pulsating Active Dot
+================================ */
+
+.timeline-item.active .stage-dot {
+    width: 7px;
+    height: 7px;
+
+    display: block;
+
+    background: var(--accent);
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 0 rgba(190, 241, 100, 0.5);
+
+    animation: timelinePulse 2s infinite;
+}
+
+@keyframes timelinePulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(190, 241, 100, 0.45);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(190, 241, 100, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(190, 241, 100, 0);
+    }
+
+}
+
+
+/* ================================
+   Current Subtask
+================================ */
+
+.timeline-subtask {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    width: fit-content;
+
+    margin-top: 18px;
+    padding: 11px 14px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 10px;
+}
+
+.subtask-dot {
+    width: 5px;
+    height: 5px;
+
+    flex-shrink: 0;
+
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.timeline-subtask div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.subtask-label {
+    color: var(--text-muted);
+
+    font-size: 9px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.timeline-subtask strong {
+    color: var(--text-primary);
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 600px) {
+
+    .timeline-section {
+        margin-top: 55px;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-marker {
+        left: -30px;
+    }
+
+    .timeline-item {
+        padding-bottom: 36px;
+    }
+
+    .timeline-content h3 {
+        font-size: 16px;
+    }
+
+}
+
+/* ================================
+   My Documents
+================================ */
+
+.documents-section {
+    margin-top: 75px;
+}
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+/* ================================
+   Document Card
+================================ */
+
+.document-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    min-height: 220px;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    background: var(--surface-hover);
+
+    border-radius: 6px 6px 14px 14px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Document top-right tab */
+
+.document-tab {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 42px;
+    height: 42px;
+
+    background: var(--background);
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 0
+    );
+}
+
+
+/* Small folded corner */
+
+.document-tab::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 13px;
+    height: 13px;
+
+    background: var(--background);
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%
+    );
+}
+
+
+/* ================================
+   Document Information
+================================ */
+
+.document-name {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.document-name span {
+    color: var(--text-primary);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: -0.015em;
+}
+
+.document-name small {
+    color: #777a78;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+/* ================================
+   Hover
+================================ */
+
+.document-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.document-card:active {
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 900px) {
+
+    .documents-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .documents-section {
+        margin-top: 55px;
+    }
+
+    .documents-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .document-card {
+        min-height: 180px;
+        padding: 15px;
+    }
+
+    .document-name span {
+        font-size: 12px;
+    }
+
+}

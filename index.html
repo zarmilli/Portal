@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================================
+     SEO & Metadata
+        ================================ -->
+
+        <title>Squarredesk Client Portal — File Sharing Made Easy</title>
+
+        <meta
+            name="description"
+            content="File sharing made easy. Client Portal gives you a simple workspace to access project updates, documents, timelines and more."
+        >
+
+        <meta
+            name="keywords"
+            content="client portal, project workspace, file sharing, client collaboration, project updates, freelancer client portal"
+        >
+
+        <meta name="author" content="Thubelihle">
+
+
+        <!-- ================================
+            Favicon
+        ================================ -->
+
+        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <link rel="apple-touch-icon" href="assets/favicon.png">
+
+
+        <!-- ================================
+            Open Graph
+        ================================ -->
+
+        <meta property="og:type" content="website">
+
+        <meta
+            property="og:title"
+            content="Thubelihle has shared a workspace with you!"
+        >
+
+        <meta
+            property="og:description"
+            content="File sharing made easy. Access your project updates, documents, timeline and more in your shared Client Portal workspace."
+        >
+
+        <meta
+            property="og:image"
+            content="https://zarmilli,github.io/Portal/assets/og-image.png"
+        >
+
+        <meta
+            property="og:url"
+            content="https://zarmilli,github.io/Portal"
+        >
+
+        <meta property="og:site_name" content="Client Portal">
+
+
+        <!-- ================================
+            Twitter / X Card
+        ================================ -->
+
+        <meta name="twitter:card" content="summary_large_image">
+
+        <meta
+            name="twitter:title"
+            content="Thubelihle has shared a workspace with you!"
+        >
+
+        <meta
+            name="twitter:description"
+            content="File sharing made easy. Access your project updates, documents, timeline and more."
+        >
+
+        <meta
+            name="twitter:image"
+            content="https://zarmilli,github.io/Portal/assets/og-image.png"
+        >
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="workspace">
+
+        <!-- Header -->
+        <header class="workspace-header">
+            <h1>Sindi's Workspace</h1>
+            <p>My projects</p>
+        </header>
+
+
+        <!-- Projects -->
+        <section class="projects">
+
+            <!-- Project Card -->
+            <article class="project-card">
+
+                <div class="project-info">
+                    <h2>EverCare</h2>
+                    <p>Website</p>
+                </div>
+
+
+                <!-- Project Dates -->
+                <div class="project-dates">
+                    <div class="date">
+                        <span>Start date</span>
+                        <strong>05 October 2026</strong>
+                    </div>
+
+                    <div class="date date-end">
+                        <span>Est End</span>
+                        <strong>15 October 2026</strong>
+                    </div>
+                </div>
+
+
+                <!-- Progress -->
+                <div class="progress-container">
+
+                    <div class="progress-track">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+
+                    <div class="progress-details">
+                        <span>Project progress</span>
+                        <strong id="progressPercentage">0%</strong>
+                    </div>
+
+                    <!-- Active Project Stage -->
+                    <div class="active-stage">
+                        <span class="stage-dot"></span>
+                        <span>Stage 4: Scaffolding</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- Project Timeline -->
+        <section class="timeline-section">
+
+            <div class="section-heading">
+                <h2>Project timeline</h2>
+                <p>Track the progress of your project.</p>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Stage 1 -->
+                <div class="timeline-item completed">
+                    <div class="timeline-marker">
+                        <span>✓</span>
+                    </div>
+
+                    <div class="timeline-content">
+                        <span class="timeline-stage">Stage 1</span>
+                        <h3>Enquiry &amp; quote</h3>
+                        <p>Initial enquiry received and project requirements reviewed.</p>
+                    </div>
+                </div>
+
+
+                <!-- Stage 2 -->
+                <div class="timeline-item completed">
+                    <div class="timeline-marker">
+                        <span>✓</span>
+                    </div>
+
+                    <div class="timeline-content">
+                        <span class="timeline-stage">Stage 2</span>
+                        <h3>Discovery</h3>
+                        <p>Project requirements, goals and creative direction established.</p>
+                    </div>
+                </div>
+
+
+                <!-- Stage 3 -->
+                <div class="timeline-item completed">
+                    <div class="timeline-marker">
+                        <span>✓</span>
+                    </div>
+
+                    <div class="timeline-content">
+                        <span class="timeline-stage">Stage 3</span>
+                        <h3>Quote accepted &amp; deposit paid</h3>
+                        <p>Project officially approved and development deposit received.</p>
+                    </div>
+                </div>
+
+
+                <!-- Stage 4 - Current -->
+                <div class="timeline-item active">
+
+                    <div class="timeline-marker">
+                        <span class="stage-dot"></span>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-stage">Stage 4</span>
+
+                        <h3>Scaffolding</h3>
+
+                        <p>
+                            Establishing the core structure and foundation of the website.
+                        </p>
+
+                        <!-- Current Subtask -->
+                        <div class="timeline-subtask">
+                            <span class="subtask-dot"></span>
+
+                            <div>
+                                <span class="subtask-label">Current task</span>
+                                <strong>Asset pooling</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- My Documents -->
+        <section class="documents-section">
+
+            <div class="section-heading">
+                <h2>My documents</h2>
+                <p>Access your project documents and files.</p>
+            </div>
+
+            <div class="documents-grid">
+
+                <!-- Client Agreement -->
+                <a href="documents/Contract Agreement.pdf"
+                class="document-card"
+                download>
+
+                    <div class="document-tab"></div>
+
+                    <div class="document-name">
+                        <span>Client agreement</span>
+                        <small>PDF</small>
+                    </div>
+
+                </a>
+
+
+                <!-- Invoice -->
+                <a href="documents/INV01-0310.pdf"
+                class="document-card"
+                download>
+
+                    <div class="document-tab"></div>
+
+                    <div class="document-name">
+                        <span>Invoice</span>
+                        <small>PDF</small>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
