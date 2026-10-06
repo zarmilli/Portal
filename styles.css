@@ -48,7 +48,7 @@ body {
 ================================ */
 
 .workspace {
-    width: min(100% - 40px, 1100px);
+    width: min(100% - 40px, 1400px);
     margin: 0 auto;
     padding: 70px 0 100px;
 }
@@ -175,6 +175,16 @@ body {
 
 .progress-container {
     width: 100%;
+}
+
+.project-preview-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 24px;
+    border-radius: 8px;
+    background: #000;
+    object-fit: cover;
 }
 
 .progress-track {
@@ -308,6 +318,14 @@ body {
 ================================ */
 
 .timeline-section {
+    margin-top: 0;
+}
+
+.project-content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: start;
+    gap: 48px;
     margin-top: 70px;
 }
 
@@ -600,12 +618,12 @@ body {
 ================================ */
 
 .documents-section {
-    margin-top: 75px;
+    margin-top: 0;
 }
 
 .documents-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -739,7 +757,21 @@ body {
    Mobile
 ================================ */
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
+
+    .project-content-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 0;
+    }
+
+    .timeline-section {
+        margin-top: 70px;
+    }
+
+    .documents-section {
+        margin-top: 75px;
+    }
 
     .documents-grid {
         grid-template-columns: repeat(2, 1fr);
