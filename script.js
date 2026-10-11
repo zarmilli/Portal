@@ -5,7 +5,7 @@
 // Change this value whenever you want
 // to update the project progress.
 
-const projectProgress = 38;
+const projectProgress = 85;
 
 
 /* ================================
